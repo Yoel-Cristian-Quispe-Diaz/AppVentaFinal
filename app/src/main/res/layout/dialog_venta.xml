@@ -24,21 +24,21 @@
             android:drawableTop="@drawable/ic_sales"
             android:drawablePadding="12dp" />
 
-        <!-- Campo ID Usuario -->
+        <!-- Campo Usuario (lista desplegable) -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/etIdUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ID Usuario (opcional)"
-                android:inputType="number"
-                android:drawableStart="@drawable/ic_user"
-                android:drawablePadding="12dp" />
+                android:hint="Usuario (opcional)"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Campo Total -->

@@ -8,20 +8,23 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.appventafinal.databinding.ItemCategoriaBinding
 import com.example.appventafinal.model.Categoria
 
-class CategoriaAdapter : ListAdapter<Categoria, CategoriaAdapter.CategoriaViewHolder>(CategoriaDiffCallback()) {
+class CategoriaAdapter(
+    private val onItemClick: (Categoria) -> Unit
+) : ListAdapter<Categoria, CategoriaAdapter.CategoriaViewHolder>(CategoriaDiffCallback()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriaViewHolder {
         val binding = ItemCategoriaBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategoriaViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: CategoriaViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onItemClick)
     }
 
     class CategoriaViewHolder(private val binding: ItemCategoriaBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(categoria: Categoria) {
+        fun bind(categoria: Categoria, onItemClick: (Categoria) -> Unit) {
             binding.tvNombre.text = categoria.nombre
             binding.tvDescripcion.text = categoria.descripcion ?: "Sin descripción"
+            binding.root.setOnClickListener { onItemClick(categoria) }
         }
     }
 }

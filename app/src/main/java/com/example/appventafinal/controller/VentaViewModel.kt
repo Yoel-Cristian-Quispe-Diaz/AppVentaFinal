@@ -47,4 +47,36 @@ class VentaViewModel : ViewModel() {
             }
         })
     }
+
+    fun updateVenta(id: Int, venta: com.example.appventafinal.model.VentaCreate) {
+        RetrofitClient.apiService.updateVenta(id, venta).enqueue(object : Callback<Venta> {
+            override fun onResponse(call: Call<Venta>, response: Response<Venta>) {
+                if (response.isSuccessful) {
+                    fetchVentas()
+                } else {
+                    _error.postValue("Error al actualizar venta: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Venta>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
+
+    fun deleteVenta(id: Int) {
+        RetrofitClient.apiService.deleteVenta(id).enqueue(object : Callback<Venta> {
+            override fun onResponse(call: Call<Venta>, response: Response<Venta>) {
+                if (response.isSuccessful) {
+                    fetchVentas()
+                } else {
+                    _error.postValue("Error al eliminar venta: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Venta>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
 }

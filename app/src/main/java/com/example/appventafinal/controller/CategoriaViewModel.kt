@@ -47,4 +47,36 @@ class CategoriaViewModel : ViewModel() {
             }
         })
     }
+
+    fun updateCategoria(id: Int, categoria: com.example.appventafinal.model.CategoriaCreate) {
+        RetrofitClient.apiService.updateCategoria(id, categoria).enqueue(object : Callback<Categoria> {
+            override fun onResponse(call: Call<Categoria>, response: Response<Categoria>) {
+                if (response.isSuccessful) {
+                    fetchCategorias()
+                } else {
+                    _error.postValue("Error al actualizar categoría: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Categoria>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
+
+    fun deleteCategoria(id: Int) {
+        RetrofitClient.apiService.deleteCategoria(id).enqueue(object : Callback<Categoria> {
+            override fun onResponse(call: Call<Categoria>, response: Response<Categoria>) {
+                if (response.isSuccessful) {
+                    fetchCategorias()
+                } else {
+                    _error.postValue("Error al eliminar categoría: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Categoria>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
 }

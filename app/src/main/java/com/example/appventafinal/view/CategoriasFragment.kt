@@ -31,7 +31,7 @@ class CategoriasFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = CategoriaAdapter()
+        val adapter = CategoriaAdapter { categoria -> showEditDialog(categoria) }
         binding.rvCategorias.layoutManager = LinearLayoutManager(context)
         binding.rvCategorias.adapter = adapter
 
@@ -65,6 +65,35 @@ class CategoriasFragment : Fragment() {
                 } else {
                     Toast.makeText(context, "Completa el nombre", Toast.LENGTH_SHORT).show()
                 }
+            }
+            .setNegativeButton("Cancelar", null)
+            .create()
+            .show()
+    }
+
+    private fun showEditDialog(categoria: Categoria) {
+        val dialogBinding = DialogCategoriaBinding.inflate(layoutInflater)
+        dialogBinding.etNombre.setText(categoria.nombre)
+        dialogBinding.etDescripcion.setText(categoria.descripcion ?: "")
+
+        AlertDialog.Builder(requireContext())
+            .setTitle("Editar Categoría")
+            .setView(dialogBinding.root)
+            .setPositiveButton("Guardar") { _, _ ->
+                val nombre = dialogBinding.etNombre.text.toString().trim()
+                val descripcion = dialogBinding.etDescripcion.text.toString().trim().ifEmpty { null }
+
+                if (nombre.isNotEmpty()) {
+                    val categoriaCreate = com.example.appventafinal.model.CategoriaCreate(
+                        nombre, descripcion
+                    )
+                    viewModel.updateCategoria(categoria.idCategoria, categoriaCreate)
+                } else {
+                    Toast.makeText(context, "Completa el nombre", Toast.LENGTH_SHORT).show()
+                }
+            }
+            .setNeutralButton("Eliminar") { _, _ ->
+                viewModel.deleteCategoria(categoria.idCategoria)
             }
             .setNegativeButton("Cancelar", null)
             .create()

@@ -47,4 +47,36 @@ class UsuarioViewModel : ViewModel() {
             }
         })
     }
+
+    fun updateUsuario(id: Int, usuario: com.example.appventafinal.model.UsuarioCreate) {
+        RetrofitClient.apiService.updateUsuario(id, usuario).enqueue(object : Callback<Usuario> {
+            override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+                if (response.isSuccessful) {
+                    fetchUsuarios()
+                } else {
+                    _error.postValue("Error al actualizar usuario: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
+
+    fun deleteUsuario(id: Int) {
+        RetrofitClient.apiService.deleteUsuario(id).enqueue(object : Callback<Usuario> {
+            override fun onResponse(call: Call<Usuario>, response: Response<Usuario>) {
+                if (response.isSuccessful) {
+                    fetchUsuarios()
+                } else {
+                    _error.postValue("Error al eliminar usuario: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Usuario>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
 }

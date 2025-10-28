@@ -101,21 +101,21 @@
 
         </LinearLayout>
 
-        <!-- Campo ID Categoría -->
+        <!-- Campo Categoría (lista desplegable) -->
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/etIdCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="ID Categoría (opcional)"
-                android:inputType="number"
-                android:drawableStart="@drawable/ic_category"
-                android:drawablePadding="12dp" />
+                android:hint="Categoría (opcional)"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Botón Guardar -->

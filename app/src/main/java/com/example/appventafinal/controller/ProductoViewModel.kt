@@ -47,4 +47,36 @@ class ProductoViewModel : ViewModel() {
             }
         })
     }
+
+    fun updateProducto(id: Int, producto: com.example.appventafinal.model.ProductoCreate) {
+        RetrofitClient.apiService.updateProducto(id, producto).enqueue(object : Callback<Producto> {
+            override fun onResponse(call: Call<Producto>, response: Response<Producto>) {
+                if (response.isSuccessful) {
+                    fetchProductos()
+                } else {
+                    _error.postValue("Error al actualizar producto: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Producto>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
+
+    fun deleteProducto(id: Int) {
+        RetrofitClient.apiService.deleteProducto(id).enqueue(object : Callback<Producto> {
+            override fun onResponse(call: Call<Producto>, response: Response<Producto>) {
+                if (response.isSuccessful) {
+                    fetchProductos()
+                } else {
+                    _error.postValue("Error al eliminar producto: ${response.message()}")
+                }
+            }
+
+            override fun onFailure(call: Call<Producto>, t: Throwable) {
+                _error.postValue("Error de red: ${t.message}")
+            }
+        })
+    }
 }
