@@ -1,8 +1,4 @@
-[📄 Ver documento PDF] (captura de pantallas.pdf)
-
-<iframe src="https://docs.google.com/gview?url=https://github.com/Yoel-Cristian-Quispe-Diaz/AppVentaFinal/blob/main/captura%20de%20pantallas.pdf&embedded=true" width="100%" height="600px"></iframe>
-
-[📄 Abrir PDF](https://github.com/Yoel-Cristian-Quispe-Diaz/AppVentaFinal/blob/main/captura%20de%20pantallas.pdf)
+<iframe src="https://github.com/Yoel-Cristian-Quispe-Diaz/AppVentaFinal/blob/main/captura%20de%20pantallas.pdf" width="100%" height="600px"></iframe>
 
 
 # 📱 MyVentaApp - Sistema de Gestión de Ventas
