@@ -1,3 +1,6 @@
+[📄 Ver documento PDF](captura de pantallas.pdf)
+
+
 # 📱 MyVentaApp - Sistema de Gestión de Ventas
 
 Una aplicación Android moderna y completa para la gestión integral de ventas, desarrollada con Kotlin y siguiendo las mejores prácticas de desarrollo móvil.
