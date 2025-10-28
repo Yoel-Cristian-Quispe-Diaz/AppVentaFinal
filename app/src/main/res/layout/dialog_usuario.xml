@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:padding="16dp">
+
+    <EditText
+            android:id="@+id/etNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre" />
+
+    <EditText
+            android:id="@+id/etCorreo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Correo"
+            android:inputType="textEmailAddress" />
+
+    <EditText
+            android:id="@+id/etContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+
+    <EditText
+            android:id="@+id/etTelefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Teléfono (opcional)"
+            android:inputType="phone" />
+
+    <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección (opcional)" />
+
+    <EditText
+            android:id="@+id/etRol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rol (cliente/admin)"
+            android:inputType="text" />
+
+</LinearLayout>

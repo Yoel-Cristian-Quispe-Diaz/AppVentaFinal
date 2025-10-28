@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MyVentaApp</string>
+    <string name="correo">Correo</string>
+    <string name="contraseña">Contraseña</string>
+    <string name="login">Iniciar Sesión</string>
+
+
+    <!-- Otros strings existentes -->
+    <string name="id_venta">ID Venta</string>
+    <string name="producto">Producto</string>
+    <string name="cantidad">Cantidad</string>
+    <string name="precio_unitario">Precio Unitario</string>
+    <string name="subtotal">Subtotal</string>
+</resources>
