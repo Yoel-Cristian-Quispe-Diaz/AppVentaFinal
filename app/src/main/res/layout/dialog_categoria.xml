@@ -1,25 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:padding="16dp">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface_white">
 
-    <EditText
-            android:id="@+id/etNombre"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Título del diálogo -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre" />
+            android:text="Nueva Categoría"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/categorias_color"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:drawableTop="@drawable/ic_category"
+            android:drawablePadding="12dp" />
 
-    <EditText
-            android:id="@+id/etDescripcion"
+        <!-- Campo Nombre -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción" />
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-    <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre de la categoría"
+                android:inputType="textCapWords"
+                android:drawableStart="@drawable/ic_category"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Descripción -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción (opcional)"
+                android:inputType="textCapSentences|textMultiLine"
+                android:minLines="2"
+                android:maxLines="4"
+                android:drawableStart="@drawable/ic_detail"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Información adicional -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/accent_orange_light"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="📂 Información"
+                    android:textStyle="bold"
+                    android:textColor="@color/accent_orange"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• Las categorías ayudan a organizar tus productos\n• Puedes asignar productos a esta categoría después"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón Guardar -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Guardar" />
-</LinearLayout>
+            android:layout_height="56dp"
+            android:text="Crear Categoría"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            style="@style/CustomButtonPrimary"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="8dp" />
+
+    </LinearLayout>
+</ScrollView>

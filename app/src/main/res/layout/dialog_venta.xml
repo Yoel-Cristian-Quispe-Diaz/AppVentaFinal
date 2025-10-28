@@ -1,29 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:padding="16dp">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface_white">
 
-    <EditText
-            android:id="@+id/etIdUsuario"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Título del diálogo -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID Usuario (opcional)"
-            android:inputType="number" />
+            android:text="Nueva Venta"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/ventas_color"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:drawableTop="@drawable/ic_sales"
+            android:drawablePadding="12dp" />
 
-    <EditText
-            android:id="@+id/etTotal"
+        <!-- Campo ID Usuario -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Total"
-            android:inputType="numberDecimal" />
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-    <EditText
-            android:id="@+id/etMetodoPago"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIdUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ID Usuario (opcional)"
+                android:inputType="number"
+                android:drawableStart="@drawable/ic_user"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Total -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Método de Pago"
-            android:inputType="text" />
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-</LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etTotal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Total de la venta ($)"
+                android:inputType="numberDecimal"
+                android:drawableStart="@drawable/ic_money"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Método de Pago -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+
+            <AutoCompleteTextView
+                android:id="@+id/etMetodoPago"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Método de pago"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Información adicional -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            app:cardBackgroundColor="@color/primary_blue_light"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="2dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="💡 Información"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary_blue_dark"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="• La fecha se registrará automáticamente\n• Puedes agregar detalles después de crear la venta"
+                    android:textSize="14sp"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Botón Guardar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Crear Venta"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            style="@style/CustomButtonPrimary"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="8dp" />
+
+    </LinearLayout>
+</ScrollView>

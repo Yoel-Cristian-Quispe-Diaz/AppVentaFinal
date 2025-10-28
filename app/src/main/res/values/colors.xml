@@ -1,6 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <!-- Colores principales modernos -->
+    <color name="colorPrimary">#2196F3</color>
+    <color name="colorPrimaryDark">#1976D2</color>
+    <color name="colorAccent">#FF5722</color>
+    
+    <!-- Paleta de colores extendida -->
+    <color name="primary_blue">#2196F3</color>
+    <color name="primary_blue_dark">#1976D2</color>
+    <color name="primary_blue_light">#BBDEFB</color>
+    
+    <color name="accent_orange">#FF5722</color>
+    <color name="accent_orange_light">#FFCCBC</color>
+    
+    <color name="success_green">#4CAF50</color>
+    <color name="success_green_light">#C8E6C9</color>
+    
+    <color name="warning_amber">#FFC107</color>
+    <color name="warning_amber_light">#FFF8E1</color>
+    
+    <color name="error_red">#F44336</color>
+    <color name="error_red_light">#FFCDD2</color>
+    
+    <!-- Colores de fondo y superficie -->
+    <color name="background_light">#FAFAFA</color>
+    <color name="surface_white">#FFFFFF</color>
+    <color name="surface_light_gray">#F5F5F5</color>
+    
+    <!-- Colores de texto -->
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_hint">#BDBDBD</color>
+    <color name="text_white">#FFFFFF</color>
+    
+    <!-- Colores para elementos específicos -->
+    <color name="fab_color">#FF5722</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="divider_color">#E0E0E0</color>
+    
+    <!-- Colores para categorías -->
+    <color name="usuarios_color">#2196F3</color>
+    <color name="productos_color">#4CAF50</color>
+    <color name="ventas_color">#FF9800</color>
+    <color name="categorias_color">#9C27B0</color>
+    <color name="detalle_venta_color">#607D8B</color>
 </resources>

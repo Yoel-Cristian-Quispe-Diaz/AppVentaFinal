@@ -2,17 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
             android:id="@+id/nav_usuarios"
+            android:icon="@drawable/ic_user"
             android:title="Usuarios" />
     <item
             android:id="@+id/nav_categorias"
+            android:icon="@drawable/ic_category"
             android:title="Categorías" />
     <item
             android:id="@+id/nav_productos"
+            android:icon="@drawable/ic_product"
             android:title="Productos" />
     <item
             android:id="@+id/nav_ventas"
+            android:icon="@drawable/ic_sales"
             android:title="Ventas" />
     <item
             android:id="@+id/nav_detalle_venta"
+            android:icon="@drawable/ic_detail"
             android:title="Detalles Venta" />
 </menu>

@@ -1,41 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="wrap_content"
-              android:orientation="vertical"
-              android:padding="16dp">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/surface_white">
 
-    <EditText
-            android:id="@+id/etNombre"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Título del diálogo -->
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nombre" />
+            android:text="Nuevo Producto"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/productos_color"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:drawableTop="@drawable/ic_product"
+            android:drawablePadding="12dp" />
 
-    <EditText
-            android:id="@+id/etDescripcion"
+        <!-- Campo Nombre -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Descripción (opcional)" />
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-    <EditText
-            android:id="@+id/etPrecio"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nombre del producto"
+                android:inputType="textCapWords"
+                android:drawableStart="@drawable/ic_product"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Campo Descripción -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Precio"
-            android:inputType="numberDecimal" />
+            android:layout_marginBottom="16dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-    <EditText
-            android:id="@+id/etStock"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descripción del producto"
+                android:inputType="textMultiLine"
+                android:minLines="2"
+                android:maxLines="4" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Fila para Precio y Stock -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stock"
-            android:inputType="number" />
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
 
-    <EditText
-            android:id="@+id/etIdCategoria"
+            <!-- Campo Precio -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etPrecio"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Precio ($)"
+                    android:inputType="numberDecimal"
+                    android:drawableStart="@drawable/ic_money"
+                    android:drawablePadding="8dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Campo Stock -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etStock"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Stock"
+                    android:inputType="number" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <!-- Campo ID Categoría -->
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID Categoría (opcional)"
-            android:inputType="number" />
+            android:layout_marginBottom="24dp"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox">
 
-</LinearLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIdCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ID Categoría (opcional)"
+                android:inputType="number"
+                android:drawableStart="@drawable/ic_category"
+                android:drawablePadding="12dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón Guardar -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGuardar"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Guardar Producto"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            style="@style/CustomButtonPrimary"
+            android:drawableStart="@drawable/ic_add"
+            android:drawablePadding="8dp" />
+
+    </LinearLayout>
+</ScrollView>
