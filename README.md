@@ -1,5 +1,8 @@
-<iframe src="https://github.com/Yoel-Cristian-Quispe-Diaz/AppVentaFinal/blob/main/captura%20de%20pantallas.pdf" width="100%" height="600px"></iframe>
+# [📄 CAPTURAS DE PANTALLA DE LA APLICACION](https://drive.google.com/file/d/1K-UQ5mYZi_uBKBo16msSJj0gfe23suI-/view?usp=sharing)
 
+
+
+(https://drive.google.com/file/d/1K-UQ5mYZi_uBKBo16msSJj0gfe23suI-/view?usp=sharing)
 
 # 📱 MyVentaApp - Sistema de Gestión de Ventas
 
